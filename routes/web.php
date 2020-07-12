@@ -13,10 +13,10 @@
 |
 */
 
-// $router->get('/', function () use ($router) {
-//     return 'hai';
-// });
+$router->get('/', function () use ($router) {
+    return 'hai';
+});
 
-$router->group(['prefix' => 'api/v1'], function () use ($router){
+$router->group(['prefix' => 'api/v1'], function () use ($router) {
     $router->get('/', 'WordController@index');
 });
