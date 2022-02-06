@@ -18,8 +18,14 @@ class WordController extends Controller
 
     public function index()
     {
-        $words = Word::all()->random(1);
+        $words = Word::inRandomOrder()->limit(1)->get();
         return response()->json($words);
+    }
+
+    public function show($id)
+    {
+        $word = Word::find($id);
+        return response()->json($word);
     }
 
     //

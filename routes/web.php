@@ -19,4 +19,5 @@ $router->get('/', function () use ($router) {
 
 $router->group(['prefix' => 'api/v1'], function () use ($router) {
     $router->get('/', 'WordController@index');
+    $router->get('/{id}', 'WordController@show');
 });
