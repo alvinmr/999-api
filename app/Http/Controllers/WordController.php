@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
+
 use App\Word;
 
 class WordController extends Controller
@@ -17,7 +18,7 @@ class WordController extends Controller
 
     public function index()
     {
-        $words = Word::all()->where('likes', '>=', 800)->random(1);
+        $words = Word::all()->random(1);
         return response()->json($words);
     }
 
